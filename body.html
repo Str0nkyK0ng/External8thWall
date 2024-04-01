@@ -1,0 +1,54 @@
+<!-- UI Elements for Template. No need to edit.  -->
+
+<!-- Use ACESFilmic for more higher contrast look & feel. 
+     Probably no need to edit. -->
+<a-scene
+  inspector="url:https://remap.ucla.edu/pq23/aframe-inspector.js?v=30"
+  reflection="directionalLight:a-light#light"
+  physics="driver:ammo"
+  responsive-immersive
+  show-coordinates="imageTarget:target0image"
+  reality-hooks
+  xrextras-gesture-detector
+  xrextras-loading
+  xrextras-runtime-error
+  renderer="colorManagement: true; toneMapping: ACESFilmic; exposure: 1.25"
+  xrconfig="defaultEnvironmentFloorTexture:'';   allowedDevices: any; verbose: false; disableDesktopTouchEmulation:true "
+  xrweb="enableVps: false; "
+  id="_scene"
+>
+  <!-- Our one and only camera object for AR, not attached to the inner root. -->
+  <!-- Change recenter component if you change the position here. -->
+  <a-camera
+    id="camera"
+    osc
+    position="0 1 0"
+    near="0.05"
+    raycaster="objects: .cantap"
+    cursor="fuse: false; rayOrigin: mouse;"
+    qz-controls
+  >
+  </a-camera>
+
+  <!-- Beginning of stuff to edit! -->
+
+  <!-- DEMO Assets  -->
+  <a-assets timeout="60000">
+    <a-asset-item
+      id="rubyModel"
+      src="assets/models/dragon-opt.glb"
+    ></a-asset-item>
+  </a-assets>
+  <!-- Dinosaur Ruby -->
+  <a-entity
+    id="ruby"
+    osc
+    shadow
+    gltf-model="#rubyModel"
+    scale="1.5 1.5 1.5"
+    position="0 -0.2 -2.5"
+    visible="true"
+    remove-culling
+  >
+  </a-entity>
+</a-scene>
