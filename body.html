@@ -3,13 +3,7 @@
 <!-- Use ACESFilmic for more higher contrast look & feel. 
      Probably no need to edit. -->
 <a-scene
-  landing-page
-  detect-mesh
-  vps-coaching-overlay
   gltf-model="dracoDecoderPath: https://cdn.8thwall.com/web/aframe/draco-decoder/"
-  xrextras-runtime-error
-  xrextras-loading
-  xrweb="enableVps: true"
 >
   <!-- Our one and only camera object for AR, not attached to the inner root. -->
   <!-- Change recenter component if you change the position here. -->
@@ -17,7 +11,7 @@
 
   <!-- Beginning of stuff to edit! -->
 
-  <a-assets timeout="60000">
+  <a-assets>
     <a-asset-item
       id="rubyModel"
       src="../assets/models/dragon-opt.glb"
@@ -33,4 +27,6 @@
     visible="true"
   >
   </a-entity>
+
+  <a-light></a-light>
 </a-scene>
