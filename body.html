@@ -2,61 +2,51 @@
 
 <!-- Use ACESFilmic for more higher contrast look & feel. 
      Probably no need to edit. -->
-<a-scene
-  id="ruby-loaded"
-  reflection="directionalLight:a-light#light"
-  reality-hooks
-  show-coordinates
-  renderer="colorManagement: true;"
-  xrface="mirroredDisplay: true; cameraDirection: front; allowedDevices: any"
-  inspector="url:https://remap.ucla.edu/pq23/aframe-inspector.js?v=30"
-  gltf-model="dracoDecoderPath: https://cdn.8thwall.com/web/aframe/draco-decoder/"
->
-  <!-- Our one and only camera object for AR, not attached to the inner root. -->
-  <!-- Change recenter component if you change the position here. -->
-  <a-camera id="camera" position="0 1 0" near="0.05"> </a-camera>
 
-  <!-- Beginning of stuff to edit! -->
+<!-- Our one and only camera object for AR, not attached to the inner root. -->
+<!-- Change recenter component if you change the position here. -->
+<a-camera id="camera" position="0 1 0" near="0.05"> </a-camera>
 
-  <a-entity
-    id="light1"
-    osc
-    position="5 10 7"
-    light="
+<!-- Beginning of stuff to edit! -->
+
+<a-entity
+  id="light1"
+  osc
+  position="5 10 7"
+  light="
             type: directional; 
             castShadow: true; 
             color: #fae; 
             shadowBias: -0.001
             intensity: 1"
-  ></a-entity>
-  <a-entity
-    id="light2"
-    osc
-    position="5 10 -7"
-    light="
+></a-entity>
+<a-entity
+  id="light2"
+  osc
+  position="5 10 -7"
+  light="
             type: directional; 
             castShadow: true; 
             color: #dff; 
             shadowBias: -0.001
             intensity: 1"
-  ></a-entity>
+></a-entity>
 
-  <a-assets>
-    <a-asset-item
-      id="rubyModel"
-      src="/aidan-themebuild/assets/dragon-opt-p2dhd1o3ze.glb"
-    ></a-asset-item>
-  </a-assets>
+<a-assets>
+  <a-asset-item
+    id="rubyModel"
+    src="/aidan-themebuild/assets/dragon-opt-p2dhd1o3ze.glb"
+  ></a-asset-item>
+</a-assets>
 
-  <!-- Dinosaur Ruby -->
-  <a-entity
-    id="ruby"
-    gltf-model="#rubyModel"
-    scale="1.5 1.5 1.5"
-    position="0 -0.2 -2.5"
-    visible="true"
-  >
-  </a-entity>
+<!-- Dinosaur Ruby -->
+<a-entity
+  id="ruby"
+  gltf-model="#rubyModel"
+  scale="1.5 1.5 1.5"
+  position="0 -0.2 -2.5"
+  visible="true"
+>
+</a-entity>
 
-  <a-light></a-light>
-</a-scene>
+<a-light></a-light>
